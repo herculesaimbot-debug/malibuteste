@@ -24,13 +24,13 @@ body{
   color:var(--text);
   font-family:var(--font2);
   overflow-x:hidden;
-  padding-top: 100px;
+  padding-top: var(--topbar-h);
 }
 .bg-orb{position:fixed; width:780px; height:780px; filter: blur(140px); opacity:.16; pointer-events:none; z-index:-2;}
 .orb1{left:-360px; top:180px; background: rgba(176,38,255,1)}
 .orb2{right:-420px; top:-260px; background: rgba(124,92,255,1)}
 .topbar{
-  /* Header fixo: mantém logo + botões visíveis ao rolar a página */
+  
   position:fixed;
   top:0;
   left:0;
@@ -42,7 +42,6 @@ body{
   background:rgba(5,6,18,.72);
   backdrop-filter: blur(12px);
   box-shadow: 0 10px 30px rgba(0,0,0,.35);
-  transition: transform .35s ease, opacity .25s ease;
 }
 .brand{display:flex; align-items:center; gap:12px}
 .logo{
@@ -61,7 +60,7 @@ body{
   gap:10px;
   flex-wrap:nowrap;
   justify-content:flex-end;
-  /* evita que os botões “estiquem” quando o userbox (avatar) aparece */
+  
   align-items:center;
   overflow:auto;
   max-width: 70vw;
@@ -106,14 +105,13 @@ body{
   background: linear-gradient(135deg, rgba(255,255,255,.06), transparent 40%, rgba(176,38,255,.04));
   opacity:.6;
 }
-/* Banner */
-/* Banner com destaque “claro” (sem estourar) */
+
 .banner{
 
   margin-bottom: 14px;
   padding: 0;
   overflow: hidden;
-  min-height: 320px;
+  min-height: 180px;
   background:
     radial-gradient(900px 220px at 20% 20%, rgba(176,38,255,.20), transparent 55%),
     radial-gradient(700px 240px at 80% 30%, rgba(124,92,255,.18), transparent 55%),
@@ -127,7 +125,7 @@ body{
   position:absolute;
   inset:0;
   pointer-events:none;
-  /* brilho controlado (fica no fundo do banner) */
+
   background:
     radial-gradient(900px 260px at 30% 30%, rgba(255,255,255,.08), transparent 60%),
     radial-gradient(700px 240px at 78% 40%, rgba(176,38,255,.10), transparent 62%);
@@ -140,12 +138,11 @@ body{
 .banner-overlay{
   position:relative;
   display:flex;
-  align-items:center;
   justify-content:space-between;
   gap:12px;
   padding: 18px;
-  min-height: 320px;
-  /* mais claro, mas controlado */
+  min-height: 180px;
+ 
   background: linear-gradient(90deg, rgba(0,0,0,.40), rgba(0,0,0,.08));
 }
 .banner-left{max-width: 1920px}
@@ -201,15 +198,10 @@ body{
 .divider{height:1px; background:rgba(255,255,255,.08); margin:14px 0}
 .codebox{display:block; background:rgba(0,0,0,.35); border:1px solid rgba(255,255,255,.10); padding:10px 12px; border-radius:14px; color:#FFFFFF;}
 
-/* =========================
-   SCROLLBAR INVISÍVEL (DESKTOP)
-   Obs: em muitos casos o scroll está no <html> (e não no body).
-   Também escondemos em containers com overflow (ex.: .nav).
-   ========================= */
 @media (min-width: 1024px) {
   html, body {
-    scrollbar-width: none;       /* Firefox */
-    -ms-overflow-style: none;    /* IE/Edge legado */
+    scrollbar-width: none;      
+    -ms-overflow-style: none;    
   }
 
   html::-webkit-scrollbar,
@@ -218,7 +210,6 @@ body{
     height: 0;
   }
 
-  /* casos de overflow interno */
   .nav {
     scrollbar-width: none;
     -ms-overflow-style: none;
@@ -363,13 +354,12 @@ body{
 
 .prod-img img{
   width:100%;
-  height:auto; /* card segue a imagem */
+  height:auto; 
   display:block;
 }
 
 
 
-/* ===== Discord Login UI ===== */
 .userbox{
   display:flex;
   align-items:center;
@@ -425,7 +415,7 @@ body{
   box-shadow: 0 0 12px rgba(88,101,242,.65);
 }
 
-/* Brilho geral do site (só no fundo, não passa por cima dos cards) */
+
 body::before{
   content:"";
   position:fixed;
@@ -444,7 +434,7 @@ body::before{
 
 
 
-/* ====== Overlay do Menu (Mobile) ====== */
+
 .nav-overlay{
   position:fixed;
   inset:0;
@@ -460,7 +450,7 @@ body::before{
   opacity:1;
   pointer-events:auto;
 }
-/* ====== Menu Hamburguer (Mobile) ====== */
+
 .hamburger{
   display:none;
   width:46px;
@@ -484,9 +474,9 @@ body::before{
 }
 .hamburger:hover{transform:translateY(-1px); border-color:rgba(176,38,255,.35)}
 
-/* Mobile: menu vira dropdown */
+
 @media (max-width: 720px){
-  /* mostra overlay e trava scroll quando menu abrir */
+
   .nav-overlay{display:block;}
   body.menu-open{overflow:hidden;}
 
@@ -499,7 +489,7 @@ body::before{
 
   .hamburger{display:inline-flex}
 
-  /* Esconde nav por padrão e mostra só quando "open" */
+
   .nav{
     position:absolute;
     top: calc(100% + 10px);
@@ -524,8 +514,17 @@ body::before{
 }
 
 
-/* Header Hide Effect */
-.topbar.hide{
-  transform: translateY(-100%);
-  opacity: 0;
+
+.banner-kicker{
+  font-family: var(--font1);
+  letter-spacing: 2px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+
+  text-shadow:
+    0 0 6px rgba(176,38,255,.8),
+    0 0 12px rgba(176,38,255,.6),
+    0 0 22px rgba(124,92,255,.5),
+    0 0 40px rgba(176,38,255,.4);
 }
