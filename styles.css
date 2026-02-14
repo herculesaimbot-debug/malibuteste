@@ -24,7 +24,7 @@ body{
   color:var(--text);
   font-family:var(--font2);
   overflow-x:hidden;
-  padding-top: var(--topbar-h);
+  padding-top: 110px;
 }
 .bg-orb{position:fixed; width:780px; height:780px; filter: blur(140px); opacity:.16; pointer-events:none; z-index:-2;}
 .orb1{left:-360px; top:180px; background: rgba(176,38,255,1)}
