@@ -24,7 +24,7 @@ body{
   color:var(--text);
   font-family:var(--font2);
   overflow-x:hidden;
-  padding-top: var(--topbar-h);
+  padding-top: 100px;
 }
 .bg-orb{position:fixed; width:780px; height:780px; filter: blur(140px); opacity:.16; pointer-events:none; z-index:-2;}
 .orb1{left:-360px; top:180px; background: rgba(176,38,255,1)}
@@ -42,6 +42,7 @@ body{
   background:rgba(5,6,18,.72);
   backdrop-filter: blur(12px);
   box-shadow: 0 10px 30px rgba(0,0,0,.35);
+  transition: transform .35s ease, opacity .25s ease;
 }
 .brand{display:flex; align-items:center; gap:12px}
 .logo{
@@ -112,7 +113,7 @@ body{
   margin-bottom: 14px;
   padding: 0;
   overflow: hidden;
-  min-height: 180px;
+  min-height: 320px;
   background:
     radial-gradient(900px 220px at 20% 20%, rgba(176,38,255,.20), transparent 55%),
     radial-gradient(700px 240px at 80% 30%, rgba(124,92,255,.18), transparent 55%),
@@ -139,10 +140,11 @@ body{
 .banner-overlay{
   position:relative;
   display:flex;
+  align-items:center;
   justify-content:space-between;
   gap:12px;
   padding: 18px;
-  min-height: 180px;
+  min-height: 320px;
   /* mais claro, mas controlado */
   background: linear-gradient(90deg, rgba(0,0,0,.40), rgba(0,0,0,.08));
 }
@@ -519,4 +521,11 @@ body::before{
 
   .nav-btn{width:100%; justify-content:space-between;}
   .userbox{width:100%; margin-top:4px;}
+}
+
+
+/* Header Hide Effect */
+.topbar.hide{
+  transform: translateY(-100%);
+  opacity: 0;
 }
