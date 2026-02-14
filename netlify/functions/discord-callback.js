@@ -16,7 +16,7 @@ exports.handler = async (event) => {
 
     const guildId = process.env.DISCORD_GUILD_ID;
     const botToken = process.env.DISCORD_BOT_TOKEN;
-    const roleId = process.env.DISCORD_ROLE_ID || "1337846745404539040";
+    const roleId = process.env.DISCORD_ROLE_ID || "1404253798138122351";
 
     const clientId = process.env.DISCORD_CLIENT_ID;
     const clientSecret = process.env.DISCORD_CLIENT_SECRET;
