@@ -107,18 +107,17 @@ body{
 }
 
 .banner{
-
-  margin-bottom: 14px;
-  padding: 0;
-  overflow: hidden;
-  min-height: 180px;
+  width:100%;
+  aspect-ratio:1536/530;
+  margin-bottom:20px;
+  overflow:hidden;
   background:
     radial-gradient(900px 220px at 20% 20%, rgba(176,38,255,.20), transparent 55%),
     radial-gradient(700px 240px at 80% 30%, rgba(124,92,255,.18), transparent 55%),
-    url("./assets/banner.png");
-  background-size: cover;
-  background-position: center;
-  border-radius: 22px;
+    url("./assets/banner.png") center center / cover no-repeat;
+  border-radius:22px;
+}
+
 }
 .banner::after{
   content:"";
@@ -141,7 +140,6 @@ body{
   justify-content:space-between;
   gap:12px;
   padding: 18px;
-  min-height: 180px;
  
   background: linear-gradient(90deg, rgba(0,0,0,.40), rgba(0,0,0,.08));
 }
