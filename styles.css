@@ -1,5 +1,5 @@
 :root{
-  --topbar-h: 110px;
+  --topbar-h: 84px;
   --bg:#050612;
   --card:#0B0D1F;
   --text:#FFFFFF;
@@ -507,31 +507,25 @@ body::before{
 }
 
 
-@media (min-width: 1200px) {
-  .container {
-    max-width: 1400px;
-  }
-}
+/* ========================================================= */
+/* ========= BANNER DESKTOP PROFISSIONAL DEFINITIVO ======== */
+/* ========================================================= */
 
-@media (min-width: 1600px) {
-  .container {
-    max-width: 1600px;
-  }
-}
-
-/* Banner full width impactante */
 @media (min-width: 1024px) {
   .banner {
     width: 100vw;
     margin-left: calc(-50vw + 50%);
     border-radius: 0;
-    aspect-ratio: 16 / 5;
-    height: auto;
-    min-height: unset;
+
+    height: 45vh;        /* escala com a tela */
+    min-height: 420px;   /* nunca fica pequeno */
+    max-height: 700px;   /* nunca exagerado */
+
+    background-size: cover;
+    background-position: center;
   }
 
   .banner-overlay {
     height: 100%;
-    min-height: unset;
   }
 }
