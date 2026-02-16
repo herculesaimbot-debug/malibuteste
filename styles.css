@@ -507,10 +507,24 @@ body::before{
 }
 
 
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1400px;
+  }
+}
 
+@media (min-width: 1600px) {
+  .container {
+    max-width: 1600px;
+  }
+}
+
+/* Banner full width impactante */
 @media (min-width: 1024px) {
   .banner {
-    width: 100%;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    border-radius: 0;
     aspect-ratio: 16 / 5;
     height: auto;
     min-height: unset;
